@@ -1,0 +1,254 @@
+{
+	"info": {
+		"_postman_id": "55f95080-15f3-4ad2-9c0a-9736fba603a0",
+		"name": "CanteenmgmtSys",
+		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json"
+	},
+	"item": [
+		{
+			"name": "Category",
+			"item": [
+				{
+					"name": "add_new_category",
+					"request": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"categoryName\":\"dinner\",\r\n    \"description\":\"This is lunch\",\r\n    \"foodItem\":[\r\n        {\r\n            \"foodItemName\":\"momo\",\r\n            \"description\":\"this is veg\",\r\n            \"price\":10.0,\r\n            \"stock\":10\r\n        },\r\n        {\r\n            \"foodItemName\":\"pasta\",\r\n            \"description\":\"this is non-veg\",\r\n            \"price\":10.0,\r\n            \"stock\":10\r\n        }\r\n    ]\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "http://localhost:8080/api/category/add_new_category",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "8080",
+							"path": [
+								"api",
+								"category",
+								"add_new_category"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "get_all_category",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "http://localhost:8080/api/category/get_all_category",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "8080",
+							"path": [
+								"api",
+								"category",
+								"get_all_category"
+							]
+						}
+					},
+					"response": []
+				}
+			]
+		},
+		{
+			"name": "FoodItem",
+			"item": [
+				{
+					"name": "get_foodItem_by_category_name",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "http://localhost:8080/api/foodItem/get_foodItem_by_category_name/dinner",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "8080",
+							"path": [
+								"api",
+								"foodItem",
+								"get_foodItem_by_category_name",
+								"dinner"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "add_new_foodItem",
+					"request": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"foodItemName\": \"chicken\",\r\n    \"description\": \"this is rice\",\r\n    \"price\": 180.0,\r\n    \"stock\":0,\r\n    \"category\": {\r\n        \"categoryName\": \"lunch\",\r\n        \"description\": \"This is lunch\"\r\n    }\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "http://localhost:8080/api/foodItem/add_new_foodItem",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "8080",
+							"path": [
+								"api",
+								"foodItem",
+								"add_new_foodItem"
+							]
+						}
+					},
+					"response": []
+				}
+			]
+		},
+		{
+			"name": "Order",
+			"item": [
+				{
+					"name": "place_new_order",
+					"request": {
+						"method": "POST",
+						"header": [],
+						"url": {
+							"raw": "http://localhost:8080/api/order/place_new_order",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "8080",
+							"path": [
+								"api",
+								"order",
+								"place_new_order"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "get_orderInfo_by_id",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "http://localhost:8080/api/order/get_orderInfo_by_id/1",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "8080",
+							"path": [
+								"api",
+								"order",
+								"get_orderInfo_by_id",
+								"1"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "get_orderInfo_by_customer_id",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "http://localhost:8080/api/order/get_orderInfo_by_customer_id/I1",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "8080",
+							"path": [
+								"api",
+								"order",
+								"get_orderInfo_by_customer_id",
+								"I1"
+							]
+						}
+					},
+					"response": []
+				}
+			]
+		},
+		{
+			"name": "Customer",
+			"item": [
+				{
+					"name": "add_new_customer",
+					"request": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"customerName\": \"Rujan\",\r\n    \"email\": \"example@gmail.com\",\r\n    \"phoneNumber\": \"9841344512\"\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "http://localhost:8080/api/customer/add_new_customer",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "8080",
+							"path": [
+								"api",
+								"customer",
+								"add_new_customer"
+							]
+						}
+					},
+					"response": []
+				}
+			]
+		},
+		{
+			"name": "Login",
+			"item": [
+				{
+					"name": "login",
+					"request": {
+						"method": "POST",
+						"header": [],
+						"url": {
+							"raw": "http://localhost:8080/api/v1/auth/authenticate",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "8080",
+							"path": [
+								"api",
+								"v1",
+								"auth",
+								"authenticate"
+							]
+						}
+					},
+					"response": []
+				}
+			]
+		}
+	]
+}
